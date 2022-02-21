@@ -66,7 +66,7 @@ GROUP BY ut.title;
 ```
 - ### Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
   - There are only 1,549 qualified mentors using the current criteria which do not reflect enough qualified, retirement-ready employees to mentor the next generation of Pewlett Hackard employees which needs to fill 72,458 roles. Each mentor would have to mentor about 47 mentees, which is not possible to mentor.
-  - #### Query to create a mentorship-eligibility table that holds the current employees who were born between January 1, 1965 and December 31, 1965.
+- #### Query to create a mentorship-eligibility table that holds the current employees who were born between January 1, 1965 and December 31, 1965.
 ```SQL
 -- The Employees Eligible for the Mentorship Program 
 SELECT DISTINCT ON (e.emp_no) e.emp_no,
