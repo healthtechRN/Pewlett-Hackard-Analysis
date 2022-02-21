@@ -17,8 +17,8 @@
 
 ## Results
 - There is a bulleted list with four major points from the two analysis deliverables. (6 pt)
-   ![PyBer Fare Summary DataFrame](analysis/Summary_df.png)
-   ![PyBer Fare Summary Graph](analysis/PyBer_fare_summary.png)
+   ![ERD](Resources/EmployeeDB.png)
+   ![Retiring Employee Count by Title](Resources/count_by_title.png)
 
 ## Summary
 -  The summary addresses the two questions and contains two additional queries or tables that may provide more insight. (5 pt)
