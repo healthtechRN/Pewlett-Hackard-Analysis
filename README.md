@@ -19,6 +19,42 @@
 - There is a bulleted list with four major points from the two analysis deliverables. (6 pt)
    ![ERD](Resources/EmployeeDB.png)
    ![Retiring Employee Count by Title](Resources/count_by_title.png)
+   
 
 ## Summary
 -  The summary addresses the two questions and contains two additional queries or tables that may provide more insight. (5 pt)
+-  ### Example of code to get total vote count
+```SQL
+-- CHALLENGE: Deliverable 1: The Number of Retiring Employees by Title
+SELECT e.emp_no,
+    e.first_name,
+e.last_name,
+    t.title,
+    t.from_date,
+	t.to_date
+INTO retirement_titles
+FROM employees as e
+INNER JOIN titles as t
+ON (e.emp_no = t.emp_no)
+WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+ORDER BY e.emp_no, t.emp_no ASC;
+
+SELECT * FROM retirement_titles;
+
+-- Use Dictinct with Orderby to remove duplicate rows
+SELECT DISTINCT ON (rt.emp_no) rt.emp_no,
+rt.first_name, 
+rt.last_name, 
+rt.title
+INTO unique_titles
+FROM retirement_titles as rt
+WHERE rt.to_date = ('9999-01-01')
+ORDER BY rt.emp_no, rt.to_date DESC;
+
+-- Employee count by most recent job title who are about to retire
+SELECT COUNT(ut.emp_no), ut.title
+-- INTO retiring_titles
+FROM unique_titles as ut
+GROUP BY ut.title;
+```
+
